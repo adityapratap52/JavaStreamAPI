@@ -29,13 +29,15 @@ public class FilterStreamPart1 {
         System.out.println(list);
         System.out.println(list1);
 
+        // You can use filter method, if you want to return boolean value
         // You can use stream API in this condition
         Stream<Integer> stream = list.stream();
         List<Integer> newList = stream.filter(i -> i % 2 == 0).collect(Collectors.toList());
         System.out.println(newList);
 
         //-----------OR------------//
-        List<Integer> newList1 = list.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
+        // you can use multiple filters
+        List<Integer> newList1 = list.stream().filter(i -> i % 2 == 0).filter(i -> i >= 20).collect(Collectors.toList());
         System.out.println(newList1);
     }
 }
